@@ -1,0 +1,151 @@
+[gd_scene load_steps=81 format=2]
+
+[ext_resource path="res://NPC1.gd" type="Script" id=1]
+[ext_resource path="res://DialogueHitbox.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Dialogue/Noticement/12.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Dialogue/Noticement/1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali16.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali10.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali11.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali5.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali20.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali23.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali21.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Dialogue/Noticement/6.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali4.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Dialogue/Noticement/7.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Dialogue/Noticement/9.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Dialogue/Noticement/11.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali13.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali24.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali17.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali19.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali9.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali14.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali6.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali15.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali7.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Dialogue/Noticement/5.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Dialogue/Noticement/10.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali8.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali12.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali22.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali25.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Dialogue/Noticement/2.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Dialogue/Noticement/4.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Dialogue/Noticement/3.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/Dialogue/Noticement/8.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali18.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta3.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta7.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta10.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta2.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta11.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta4.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta5.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta6.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta1.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta8.png" type="Texture" id=49]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta9.png" type="Texture" id=50]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana6.png" type="Texture" id=51]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana4.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana8.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana10.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana11.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana3.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana12.png" type="Texture" id=57]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana13.png" type="Texture" id=58]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana9.png" type="Texture" id=59]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana5.png" type="Texture" id=60]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana2.png" type="Texture" id=61]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana1.png" type="Texture" id=62]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana7.png" type="Texture" id=63]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar9.png" type="Texture" id=64]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar2.png" type="Texture" id=65]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar5.png" type="Texture" id=66]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar6.png" type="Texture" id=67]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar1.png" type="Texture" id=68]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar8.png" type="Texture" id=69]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar10.png" type="Texture" id=70]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar12.png" type="Texture" id=71]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar13.png" type="Texture" id=72]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar7.png" type="Texture" id=73]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar3.png" type="Texture" id=74]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar11.png" type="Texture" id=75]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar4.png" type="Texture" id=76]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 32 ), ExtResource( 20 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 8 ), ExtResource( 22 ), ExtResource( 39 ), ExtResource( 23 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 33 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "ALI_IDLE",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 43 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 42 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "BERKEATA_IDLE",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 62 ), ExtResource( 61 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 60 ), ExtResource( 51 ), ExtResource( 63 ), ExtResource( 53 ), ExtResource( 59 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "DANA_IDLE",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 65 ), ExtResource( 74 ), ExtResource( 76 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 73 ), ExtResource( 69 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 75 ), ExtResource( 71 ), ExtResource( 72 ) ],
+"loop": true,
+"name": "ZULAR_IDLE",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 5 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 29 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 38 ), ExtResource( 18 ), ExtResource( 30 ), ExtResource( 19 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 120.266
+
+[node name="NPC1" type="KinematicBody2D" groups=["NPC", "Saveobject"]]
+position = Vector2( 632, 296 )
+z_index = 1
+script = ExtResource( 1 )
+need_dialogue = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 4, 4 )
+frames = SubResource( 5 )
+animation = "ZULAR_IDLE"
+frame = 7
+playing = true
+offset = Vector2( 0, -15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0, -152 )
+scale = Vector2( 2.5, 2.16667 )
+frames = SubResource( 6 )
+frame = 2
+playing = true
+
+[node name="Interaction" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
+position = Vector2( 0, -56 )
+shape = SubResource( 7 )
+
+[connection signal="area_entered" from="Interaction" to="." method="_on_Interaction_area_entered"]
+[connection signal="area_exited" from="Interaction" to="." method="_on_Interaction_area_exited"]

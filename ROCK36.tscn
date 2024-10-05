@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://STATIC.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Concepts/rock.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 60, 41 )
+
+[node name="ROCK36" type="StaticBody2D" groups=["Saveobject"]]
+position = Vector2( 6712, 4184 )
+script = ExtResource( 1 )
+
+[node name="Yurt2" type="Sprite" parent="."]
+modulate = Color( 0.368627, 0.301961, 0.192157, 1 )
+scale = Vector2( 5, 5 )
+z_index = 1
+texture = ExtResource( 2 )
+offset = Vector2( 0, -15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4, -39 )
+shape = SubResource( 28 )

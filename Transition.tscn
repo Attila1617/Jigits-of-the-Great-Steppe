@@ -1,0 +1,162 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Transition.gd" type="Script" id=1]
+
+[sub_resource type="Shader" id=14]
+code = "/*
+	ギザギザトランジションシェーダー by あるる（きのもと 結衣）
+	Saw Transition Shader by KINOMOTO Yui
+
+	MIT License
+*/
+shader_type canvas_item;
+
+uniform float saw_b_shift = -0.267;
+uniform float saw_a_interval = 1.0;
+uniform float saw_b_interval = 2.0;
+uniform float saw_a_scale = 1.0;
+uniform float saw_b_scale = 0.821;
+
+uniform vec2 uv_scale = vec2( 3.0, 8.0 );
+uniform sampler2D tex : hint_albedo;
+uniform vec4 color : hint_color = vec4( 0.0, 0.0, 0.0, 1.0 );
+
+uniform float right = 0.0;
+uniform float left = -1.0;
+
+float calc_saw( float y, float interval, float scale )
+{
+	return max( ( abs( interval / 2.0 - mod( y, interval ) ) - ( interval / 2.0 - 0.5 ) ) * scale, 0.0 );
+}
+
+void fragment( )
+{
+	vec2 scaled_uv = UV * uv_scale;
+	float saw_a = calc_saw( scaled_uv.y, saw_a_interval, saw_a_scale );
+	float saw_b = calc_saw( scaled_uv.y + saw_b_shift, saw_b_interval, saw_b_scale );
+
+	vec4 texture_pixel = texture( tex, UV );
+
+	COLOR = vec4(
+		color.rgb * texture_pixel.rgb
+	,	color.a * texture_pixel.a
+		* float( scaled_uv.x < max( saw_a, saw_b ) + right )
+		* float( max( saw_a, saw_b ) + left < scaled_uv.x )
+	);
+}"
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = SubResource( 14 )
+shader_param/saw_b_shift = -0.267
+shader_param/saw_a_interval = 1.0
+shader_param/saw_b_interval = 2.0
+shader_param/saw_a_scale = 1.0
+shader_param/saw_b_scale = 0.821
+shader_param/uv_scale = Vector2( 3, 8 )
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/right = -1.0
+shader_param/left = -1.0
+
+[sub_resource type="Animation" id=11]
+resource_name = "2"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:material:shader_param/right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -1.0, 3.0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "New Anim"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -1.0, 3.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:material:shader_param/right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:material:shader_param/right")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
+}
+
+[node name="Transition" type="ColorRect"]
+material = SubResource( 10 )
+anchor_right = 0.99975
+anchor_bottom = 1.00044
+margin_right = 0.32
+margin_bottom = -0.32
+mouse_filter = 2
+color = Color( 1, 1, 1, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+anims/2 = SubResource( 11 )
+"anims/New Anim" = SubResource( 12 )
+anims/RESET = SubResource( 13 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

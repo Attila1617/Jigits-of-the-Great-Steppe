@@ -1,0 +1,157 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Backgroundconcept.png" type="Texture" id=1]
+[ext_resource path="res://Main Menu.gd" type="Script" id=2]
+[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Transition.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mainmenu.mp3" type="AudioStream" id=5]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.215686, 0.215686, 0.215686, 0.741176 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.52549, 0.384314, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0, 0, 0, 0.596078 )
+shadow_size = 10
+shadow_offset = Vector2( 0, 8 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.215686, 0.215686, 0.215686, 0.0980392 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.52549, 0.384314, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0, 0, 0, 0.596078 )
+shadow_size = 10
+shadow_offset = Vector2( 0, 8 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0.52549, 0.384314, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_size = 10
+shadow_offset = Vector2( 0, 8 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.215686, 0.215686, 0.215686, 0.705882 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.52549, 0.384314, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_size = 10
+shadow_offset = Vector2( 0, 8 )
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="Theme" id=16]
+Button/styles/hover = SubResource( 12 )
+Button/styles/normal = SubResource( 13 )
+Button/styles/pressed = SubResource( 5 )
+CheckBox/styles/focus = SubResource( 14 )
+CheckBox/styles/hover = SubResource( 6 )
+CheckBox/styles/hover_pressed = SubResource( 6 )
+CheckBox/styles/normal = SubResource( 6 )
+CheckBox/styles/pressed = SubResource( 6 )
+OptionButton/styles/focus = SubResource( 15 )
+OptionButton/styles/hover = SubResource( 6 )
+OptionButton/styles/normal = SubResource( 6 )
+OptionButton/styles/pressed = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 33
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 16 )
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.3125
+anchor_top = 0.28
+anchor_right = 0.687781
+anchor_bottom = 0.386333
+margin_right = -0.288
+margin_bottom = 0.200001
+text = "TRSTART"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.052
+anchor_right = 1.0
+anchor_bottom = 0.158
+margin_top = -0.200001
+margin_bottom = 0.199997
+custom_fonts/font = SubResource( 3 )
+text = "TRGAMENAME"
+align = 1
+valign = 1
+
+[node name="Button2" type="Button" parent="."]
+anchor_left = 0.3125
+anchor_top = 0.493333
+anchor_right = 0.687781
+anchor_bottom = 0.599666
+margin_right = -0.288
+margin_bottom = 0.200001
+text = "TRSETTINGS"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button3" type="Button" parent="."]
+anchor_left = 0.3125
+anchor_top = 0.706667
+anchor_right = 0.687781
+anchor_bottom = 0.813
+margin_right = -0.288
+margin_bottom = 0.200001
+text = "TREXIT"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Transition" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0, 0.345098, 0.286275, 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]

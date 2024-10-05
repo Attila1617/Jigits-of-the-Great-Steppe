@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Sprites/Concepts/Dzungars/1/Dzungar1.png" type="Texture" id=1]
+[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://EnemyPanel.gd" type="Script" id=3]
+
+[sub_resource type="Gradient" id=18]
+offsets = PoolRealArray( 0, 0.51462, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 0.992188, 1, 0, 1, 0, 1, 0.0859375, 1 )
+
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 18 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Gradient" id=23]
+offsets = PoolRealArray( 1 )
+colors = PoolColorArray( 0, 0, 0, 0.854902 )
+
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
+
+[node name="EnemyPanel" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 0.206
+anchor_bottom = 0.367
+margin_right = 0.319977
+margin_bottom = -0.240021
+rect_min_size = Vector2( 264, 264 )
+rect_pivot_offset = Vector2( 132, 132 )
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.152
+anchor_top = 0.152
+anchor_right = 0.848
+anchor_bottom = 0.848
+margin_left = -0.128002
+margin_top = -0.128002
+margin_right = 0.127991
+margin_bottom = 0.127991
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="HP" type="TextureProgress" parent="."]
+anchor_left = 0.121
+anchor_top = 0.879
+anchor_right = 0.879
+anchor_bottom = 0.939
+margin_left = 0.0559978
+margin_top = -0.056015
+margin_right = -0.056015
+margin_bottom = 0.103989
+texture_progress = SubResource( 19 )
+nine_patch_stretch = true
+
+[node name="name" type="Label" parent="."]
+anchor_left = 0.121
+anchor_top = 0.061
+anchor_right = 0.879
+anchor_bottom = 0.121
+margin_left = 0.0559978
+margin_top = -0.104002
+margin_right = -0.056015
+margin_bottom = 0.0559978
+
+[node name="HP2" type="Label" parent="."]
+anchor_left = 0.121212
+anchor_top = 0.878788
+anchor_right = 0.878515
+anchor_bottom = 0.939424
+margin_right = 0.0719986
+margin_bottom = -0.00800133
+custom_fonts/font = SubResource( 20 )
+text = "80"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="cooldown" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="topas" type="Timer" parent="."]
+one_shot = true
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+anchor_left = -0.00384848
+anchor_top = -0.000333324
+anchor_right = 0.996636
+anchor_bottom = 1.00015
+margin_left = 1.016
+margin_top = 0.0879974
+margin_right = 0.887993
+margin_bottom = -0.0400085
+texture_progress = SubResource( 24 )
+fill_mode = 4
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 16, -8 )
+width = 7.0
+default_color = Color( 1, 0, 0, 1 )
+
+[node name="Tween" type="Tween" parent="Line2D"]
+
+[connection signal="gui_input" from="." to="." method="_on_EnemyPanel_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_EnemyPanel_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_EnemyPanel_mouse_exited"]
+[connection signal="timeout" from="topas" to="." method="_on_topas_timeout"]
